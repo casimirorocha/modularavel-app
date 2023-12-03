@@ -7,9 +7,8 @@ export default {
         require('./vendor/wireui/wireui/tailwind.config.js')
     ],
     content: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.js",
-        "./resources/**/*.vue",
+        "./resources/**/*.{js,css,scss,sass,blade.php}",
+        "./Modules/**/*.{js,css,scss,sass,blade.php}",
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         // wireui
