@@ -2,6 +2,7 @@
 
 use Nwidart\Modules\Activators\FileActivator;
 use Nwidart\Modules\Commands;
+use Termwind\Enums\Color;
 
 return [
 
@@ -26,8 +27,8 @@ return [
     */
 
     'stubs' => [
-        'enabled' => false,
-        'path' => base_path('vendor/nwidart/laravel-modules/src/Commands/stubs'),
+        'enabled' => true,
+        'path' => base_path('stubs/nwidart-stubs'),
         'files' => [
             'routes/web' => 'routes/web.php',
             'routes/api' => 'routes/api.php',
@@ -43,7 +44,7 @@ return [
         'replacements' => [
             'routes/web' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE', 'CONTROLLER_NAMESPACE'],
             'routes/api' => ['LOWER_NAME', 'STUDLY_NAME'],
-            'vite' => ['LOWER_NAME'],
+            'vite' => ['LOWER_NAME', 'STUDLY_NAME'],
             'json' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE', 'PROVIDER_NAMESPACE'],
             'views/index' => ['LOWER_NAME'],
             'views/master' => ['LOWER_NAME', 'STUDLY_NAME'],

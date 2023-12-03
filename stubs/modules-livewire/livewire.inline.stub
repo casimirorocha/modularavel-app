@@ -9,10 +9,10 @@ class [class] extends Component
 {
     public function render(): View|string
     {
-        return <<<'HTML'
+        return <<<'blade'
             <div>
-                {{-- [quote] --}}
+                <h3>[quote]</h3>
             </div>
-        HTML;
+        blade;
     }
 }
