@@ -6,7 +6,9 @@
 
         <title>{{ $title ?? 'Page Title' }}</title>
 
-        @vite('resources/js/app.js')
+        <wireui:scripts/>
+
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
         {{ $slot }}
