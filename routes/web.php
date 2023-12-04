@@ -2,7 +2,6 @@
 
 use App\Livewire\Counter;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes

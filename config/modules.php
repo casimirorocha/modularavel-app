@@ -31,9 +31,12 @@ return [
         'path' => base_path('stubs/nwidart-stubs'),
         'files' => [
             'routes/web' => 'routes/web.php',
+            'routes/livewire' => 'routes/livewire.php',
             'routes/api' => 'routes/api.php',
             'views/index' => 'resources/views/index.blade.php',
             'views/master' => 'resources/views/layouts/master.blade.php',
+            'livewire/component-class' => 'Livewire/Counter.php',
+            'livewire/component-view' => 'resources/views/livewire/counter.blade.php',
             'scaffold/config' => 'config/config.php',
             'composer' => 'composer.json',
             'assets/js/app' => 'resources/assets/js/app.js',
@@ -43,11 +46,14 @@ return [
         ],
         'replacements' => [
             'routes/web' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE', 'CONTROLLER_NAMESPACE'],
+            'routes/livewire' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE', 'CONTROLLER_NAMESPACE'],
             'routes/api' => ['LOWER_NAME', 'STUDLY_NAME'],
             'vite' => ['LOWER_NAME', 'STUDLY_NAME'],
             'json' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE', 'PROVIDER_NAMESPACE'],
             'views/index' => ['LOWER_NAME'],
             'views/master' => ['LOWER_NAME', 'STUDLY_NAME'],
+            'livewire/component-class' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE'],
+            'livewire/component-view' => ['LOWER_NAME', 'STUDLY_NAME'],
             'scaffold/config' => ['STUDLY_NAME'],
             'composer' => [
                 'LOWER_NAME',

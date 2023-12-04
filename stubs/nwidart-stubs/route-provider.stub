@@ -13,6 +13,11 @@ class $CLASS$ extends ServiceProvider
     protected string $moduleNamespace = '$MODULE_NAMESPACE$\$MODULE$\$CONTROLLER_NAMESPACE$';
 
     /**
+    * The module namespace to assume when generating URLs to actions.
+    */
+    protected string $moduleNamespaceForLivewire = '$MODULE_NAMESPACE$\$MODULE$\Livewire';
+
+    /**
      * Called before routes are registered.
      *
      * Register any model bindings or pattern based filters.
@@ -30,6 +35,8 @@ class $CLASS$ extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
+
+        $this->mapLivewireRoutes();
     }
 
     /**
@@ -55,5 +62,17 @@ class $CLASS$ extends ServiceProvider
             ->middleware('api')
             ->namespace($this->moduleNamespace)
             ->group(module_path('$MODULE$', '$API_ROUTES_PATH$'));
+    }
+
+    /**
+     * Define the livewire component's rout for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     */
+    protected function mapLivewireRoutes(): void
+    {
+        Route::middleware('web')
+            ->namespace($this->moduleNamespaceForLivewire)
+            ->group(module_path('$MODULE$', '/routes/livewire.php'));
     }
 }

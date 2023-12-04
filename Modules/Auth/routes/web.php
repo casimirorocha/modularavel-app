@@ -14,6 +14,28 @@ use Modules\Auth\app\Http\Controllers\AuthController;
 |
 */
 
-Route::group([], function () {
-    Route::resource('auth', AuthController::class)->names('auth');
+// Guest users route
+Route::middleware('guest')->group(function()
+{
+    Route::get('auth', [AuthController::class, 'index']);
+});
+
+// Authenticated users route
+Route::middleware('auth')->group(function ()
+{
+
+    // Routes only for users with verified email
+    Route::middleware('verified')->group(function() {
+
+    });
+
+    // Routes that require authenticated user password confirmation
+    Route::middleware('password.confirm')->group(function() {
+
+    });
+
+    // Admin users route
+    Route::prefix('admin/auth-module')->middleware('admin.only')->group(function() {
+
+    });
 });

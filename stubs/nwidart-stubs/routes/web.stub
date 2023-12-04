@@ -14,6 +14,28 @@ use $MODULE_NAMESPACE$\$STUDLY_NAME$\$CONTROLLER_NAMESPACE$\$STUDLY_NAME$Control
 |
 */
 
-Route::group([], function () {
-    Route::resource('$LOWER_NAME$', $STUDLY_NAME$Controller::class)->names('$LOWER_NAME$');
+// Guest users route
+Route::middleware('guest')->group(function()
+{
+    Route::get('$LOWER_NAME$', [$STUDLY_NAME$Controller::class, 'index']);
+});
+
+// Authenticated users route
+Route::middleware('auth')->group(function ()
+{
+
+    // Routes only for users with verified email
+    Route::middleware('verified')->group(function() {
+
+    });
+
+    // Routes that require authenticated user password confirmation
+    Route::middleware('password.confirm')->group(function() {
+
+    });
+
+    // Admin users route
+    Route::prefix('admin/$LOWER_NAME$-module')->middleware('admin.only')->group(function() {
+
+    });
 });

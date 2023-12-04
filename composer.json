@@ -11,6 +11,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.2",
+        "livewire/volt": "^1.6",
         "mhmiton/laravel-modules-livewire": "^2.2",
         "nwidart/laravel-modules": "^10.0",
         "wireui/wireui": "^1.18"
