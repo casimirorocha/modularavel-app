@@ -8,11 +8,13 @@
 
         <wireui:scripts/>
 
-        @stack('styles')
-
-        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+        @vite(['resources/**/*.{css,js}', ...\Nwidart\Modules\Module::getAssets()])
     </head>
     <body>
-        {{ $slot }}
+        @if(isset($slot))
+            {!! $slot !!}
+        @else
+            @yield('content')
+        @endif
     </body>
 </html>

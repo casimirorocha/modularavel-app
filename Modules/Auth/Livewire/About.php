@@ -1,13 +1,13 @@
 <?php
 
-namespace [namespace];
+namespace Modules\Auth\Livewire;
 
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Illuminate\View\View;
 
-#[Layout('[module_lowername]::layouts.master')]
-class [class] extends Component
+#[Layout('auth::layouts.master')]
+class About extends Component
 {
     public int $count;
 
@@ -36,8 +36,6 @@ class [class] extends Component
 
     public function render(): View|string
     {
-        return view('[view]')->with([
-            'tag' => '<[tag] />'
-        ]);
+        return view('auth::livewire.about');
     }
 }

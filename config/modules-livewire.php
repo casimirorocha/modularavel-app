@@ -27,14 +27,15 @@ return [
     |
     */
 
-    // 'custom_modules' => [
-    //     'Chat' => [
-    //         'path' => base_path('libraries/Chat'),
-    //         'module_namespace' => 'Libraries\\Chat',
-    //         // 'namespace' => 'Livewire',
-    //         // 'view' => 'Resources/views/livewire',
-    //         // 'name_lower' => 'chat',
-    //     ],
-    // ],
+    'custom_modules' => [
+         'Chat' => [
+             'path' => base_path('Modules/Chat'),
+             'module_namespace' => 'Modules\\Chat',
+             'namespace' => 'Livewire',
+             'view' => 'Resources/views/livewire',
+             'name_lower' => 'chat',
+             'layout' => 'teste',
+         ],
+    ],
 
 ];

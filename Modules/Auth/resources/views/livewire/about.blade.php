@@ -13,8 +13,8 @@
                     <x-button class="font-semibold" wire:click="decrement" label="Decrement" color="red" icon="minus" size="md"/>
                 </div>
                 <div class="text-start text-lg font-semibold text-white flex flex-col gap-5">
-                    <p><strong>CLASS:</strong> [class]</p>
-                    <p><strong>VIEW:</strong> [view]</p>
+                    <p><strong>CLASS:</strong> Modules/Auth/Livewire/About.php</p>
+                    <p><strong>VIEW:</strong> <a href="Modules/Auth/Resources/views/livewire/about.blade.php">Modules/Auth/Resources/views/livewire/about.blade.php</a></p>
                     <p><strong>TAG:</strong> {{ $tag }}</p>
                 </div>
             </div>
