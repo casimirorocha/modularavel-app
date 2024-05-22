@@ -25,24 +25,56 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
      */
     protected $description = 'Command description';
 
-    public function handle()
+    public function handle(): void
     {
         parent::handle();
 
-        $this->line('running: php artisan optimize:clear');
-
-         $result = $this->askWithCompletion('run artisan optimize:clear command?', [
-             'y' => 1,
-             'n' => 0,
+         $runOptimizeClear = $this->askWithCompletion('run php artisan optimize:clear?', [
+             'y' => true,
+             'n' => false,
          ], 'y,n');
 
-         $this->line('result: '. $result);
+        $runComposerDump = $this->askWithCompletion('run composer dump-autoload?', [
+            'y' => true,
+            'n' => false,
+        ], 'y,n');
 
-        $this->dump_autoload();
+        $autoAddRoute = $this->askWithCompletion('add route to routes/livewire.php?', [
+            'y' => true,
+            'n' => false,
+        ], 'y,n');
+
+        if ($autoAddRoute) {
+            $this->automaticAddRouteAtRouteFile('livewire');
+        }
+
+        if ($runComposerDump) {
+            // $this->dump_autoload();
+        }
+
+        if ($runOptimizeClear) {
+            $this->call('optimize:clear');
+        }
+    }
+
+    protected function automaticAddRouteAtRouteFile(string $routeGroupPrefix = null): void
+    {
+        $routesPath = $this->getModulePath().'/routes/livewire.php';
+        $marker = "    // auto-routes: auth:module";
+        $hasRoute = "Volt::route('login', Login::class)->name('auth::livewire.login');"; // change this, or make it dynamic
+        $new_route = "Volt::route('logi2n', Login::class)->name('auth::livewire.login');";
+        $routes = file_get_contents($routesPath);
+
+        $routeAlreadyExists = str_contains($new_route, $routes);
+
+        if (!$routeAlreadyExists) {
+            $routes = str_replace($hasRoute, $new_route, $routes);
+            file_put_contents($routesPath, $routes);
+        }
     }
 
 
-    private function dump_autoload()
+    private function dump_autoload(): void
     {
         $process = new Process(['composer', 'dump-autoload', '-o']);
         $process->setTimeout(null);

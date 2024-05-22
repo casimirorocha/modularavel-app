@@ -27,5 +27,8 @@
         "psr-4": {
             "Modules\\Auth\\Tests\\": "tests/"
         }
+    },
+    "require": {
+        "izniburak/laravel-auto-routes": "^2.0"
     }
 }

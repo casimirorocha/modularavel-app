@@ -1,15 +1,15 @@
 <?php
 
-namespace Modules\Auth\Livewire;
+namespace [namespace];
 
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 use Illuminate\View\View;
 
-#[Layout('auth::layouts.master')]
-#[Title('Auth - Login')]
-class Login extends Component
+#[Layout('[module_lowername]::layouts.master')]
+#[Title('[module_name] - [class]')]
+class [class] extends Component
 {
     public int $count;
 
@@ -38,8 +38,8 @@ class Login extends Component
 
     public function render(): View|string
     {
-        return view('auth::livewire.login')->with([
-            'tag' => '<livewire:auth::login />'
+        return view('[view]')->with([
+            'tag' => '<[tag] />'
         ]);
     }
 }
