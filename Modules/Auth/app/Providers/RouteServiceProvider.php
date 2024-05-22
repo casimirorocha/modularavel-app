@@ -4,6 +4,7 @@ namespace Modules\Auth\app\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Modules\Auth\app\Http\Controllers\AuthController;
 
 class RouteServiceProvider extends ServiceProvider
 {

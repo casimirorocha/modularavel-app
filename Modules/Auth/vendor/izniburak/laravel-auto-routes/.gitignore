@@ -1,7 +1,0 @@
-.DS_Store
-.idea
-/node_modules
-/vendor
-.phpunit.result.cache
-.phpunit.cache/
-composer.lock

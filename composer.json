@@ -14,6 +14,7 @@
         "livewire/volt": "^1.6",
         "mhmiton/laravel-modules-livewire": "^2.2",
         "nwidart/laravel-modules": "^10.0",
+        "spatie/laravel-route-discovery": "^1.0",
         "wireui/wireui": "^1.18"
     },
     "require-dev": {
@@ -26,6 +27,9 @@
         "spatie/laravel-ignition": "^2.0"
     },
     "autoload": {
+        "files": [
+            "Modules/Core/app/Helpers/Helpers.php"
+        ],
         "psr-4": {
             "App\\": "app/",
             "Modules\\": "Modules/",

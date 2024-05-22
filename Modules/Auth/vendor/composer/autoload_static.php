@@ -15,10 +15,6 @@ class ComposerStaticInitd612d65548082f45cd99a198baf484bf
             'Modules\\Auth\\App\\' => 17,
             'Modules\\Auth\\' => 13,
         ),
-        'B' => 
-        array (
-            'Buki\\AutoRoute\\' => 15,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -41,10 +37,6 @@ class ComposerStaticInitd612d65548082f45cd99a198baf484bf
         'Modules\\Auth\\' => 
         array (
             0 => __DIR__ . '/../..' . '/',
-        ),
-        'Buki\\AutoRoute\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/izniburak/laravel-auto-routes/src',
         ),
     );
 

@@ -11,5 +11,4 @@ return array(
     'Modules\\Auth\\Database\\Factories\\' => array($baseDir . '/database/factories'),
     'Modules\\Auth\\App\\' => array($baseDir . '/app'),
     'Modules\\Auth\\' => array($baseDir . '/'),
-    'Buki\\AutoRoute\\' => array($vendorDir . '/izniburak/laravel-auto-routes/src'),
 );

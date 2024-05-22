@@ -4,10 +4,16 @@ namespace App\Console\Commands;
 
 use Illuminate\Support\Composer;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Mhmiton\LaravelModulesLivewire\Commands\LivewireMakeCommand;
+use Modules\Auth\Livewire\Login;
+use Spatie\LaravelIgnition\Solutions\SolutionProviders\MissingImportSolutionProvider;
+use Spatie\LaravelIgnition\Solutions\SuggestImportSolution;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
+use function Laravel\Prompts\search;
 
 class MakeLivewireComponentForModule extends LivewireMakeCommand
 {
@@ -29,7 +35,7 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
     {
         parent::handle();
 
-         $runOptimizeClear = $this->askWithCompletion('run php artisan optimize:clear?', [
+     /*    $runOptimizeClear = $this->askWithCompletion('run php artisan optimize:clear?', [
              'y' => true,
              'n' => false,
          ], 'y,n');
@@ -37,7 +43,7 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
         $runComposerDump = $this->askWithCompletion('run composer dump-autoload?', [
             'y' => true,
             'n' => false,
-        ], 'y,n');
+        ], 'y,n');*/
 
         $autoAddRoute = $this->askWithCompletion('add route to routes/livewire.php?', [
             'y' => true,
@@ -47,30 +53,31 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
         if ($autoAddRoute) {
             $this->automaticAddRouteAtRouteFile('livewire');
         }
-
+/*
         if ($runComposerDump) {
             // $this->dump_autoload();
         }
 
         if ($runOptimizeClear) {
             $this->call('optimize:clear');
-        }
+        }*/
     }
 
     protected function automaticAddRouteAtRouteFile(string $routeGroupPrefix = null): void
     {
-        $routesPath = $this->getModulePath().'/routes/livewire.php';
-        $marker = "    // auto-routes: auth:module";
-        $hasRoute = "Volt::route('login', Login::class)->name('auth::livewire.login');"; // change this, or make it dynamic
-        $new_route = "Volt::route('logi2n', Login::class)->name('auth::livewire.login');";
+/*        $routesPath = $this->getModulePath().'/routes/livewire.php';
+        $marker = "// auto-routes: auth:module";
+        $new_route = "Volt::route('login2', Login::class)->name('auth::livewire.login');";
         $routes = file_get_contents($routesPath);
 
-        $routeAlreadyExists = str_contains($new_route, $routes);
+        $routes = str_replace($marker, $marker.PHP_EOL."    ".$new_route, $routes);*/
 
-        if (!$routeAlreadyExists) {
-            $routes = str_replace($hasRoute, $new_route, $routes);
-            file_put_contents($routesPath, $routes);
-        }
+        // file_put_contents($routesPath, $routes);
+
+        File::append($this->getModulePath().'/routes/livewire.php', "
+\Livewire\Volt\Volt::route('login', \Modules\Auth\Livewire\Login::class)
+                    ->name('auth::livewire.login')
+                    ->prefix('auth');".PHP_EOL);
     }
 
 
@@ -95,11 +102,11 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
         $template = file_get_contents($this->component->stub->class);
 
         if ($this->isInline()) {
-            $template = preg_replace('/\[quote\]/', $this->getComponentQuote(), $template);
+            $template = preg_replace('/\[quote]/', $this->getComponentQuote(), $template);
         }
 
         return preg_replace(
-            pattern: ['/\[namespace\]/', '/\[class\]/', '/\[view\]/', '/\[module_name\]/', '/\[module_lowername\]/', '/\[tag\]/'],
+            pattern: ['/\[namespace]/', '/\[class]/', '/\[view]/', '/\[module_name]/', '/\[module_lowername]/', '/\[tag]/'],
             replacement: [$this->getClassNamespace(), $this->getClassName(), $this->getViewName(), $this->getModuleName(), $this->getModuleLowerName(), $this->getComponentTagForView()],
             subject: $template,
         );
@@ -108,7 +115,7 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
     protected function getViewContents(): array|string|null
     {
         return preg_replace(
-            pattern: ['/\[quote\]/', '/\[class\]/', '/\[view\]/', '/\[module_name\]/', '/\[module_lowername\]/', '/\[view_name\]/'],
+            pattern: ['/\[quote]/', '/\[class]/', '/\[view]/', '/\[module_name]/', '/\[module_lowername]/', '/\[view_name]/'],
             replacement: [$this->getComponentQuote(), $this->getClassSourcePath(),$this->getViewSourcePath(), $this->getModuleName(), $this->getModuleLowerName(), ucfirst($this->component->view->name)],
             subject: file_get_contents($this->component->stub->view),
         );

@@ -5,7 +5,7 @@
             <div class="flex flex-col gap-5">
                 <div>
                     <h1 class="text-5xl text-white font-extrabold">
-                        Auth - Login
+                        Auth - Login {{ currentUser('username') }}
                     </h1>
                 </div>
                 <div>

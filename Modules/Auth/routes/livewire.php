@@ -1,11 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use Livewire\Volt\Volt;
-use Modules\Auth\Livewire\Counter;
-use Modules\Auth\Livewire\Login;
-use Modules\Auth\Livewire\Register;
-
 /*
 |--------------------------------------------------------------------------
 | Livewire - Web Routes
@@ -18,8 +12,12 @@ use Modules\Auth\Livewire\Register;
 */
 
 
-Route::prefix('auth')->group(function() {
-    // auto-routes: auth:module
-   Volt::route('logi2n', Login::class)->name('auth::livewire.login');
-   Volt::route('register', Register::class)->name('auth::livewire.register');
-});
+\Livewire\Volt\Volt::route('register', \Modules\Auth\Livewire\Register::class)
+    ->name('auth::livewire.register')
+    ->prefix('auth');
+
+
+\Livewire\Volt\Volt::route('login', \Modules\Auth\Livewire\Login::class)
+                    ->name('auth::livewire.login')
+                    ->prefix('auth');
+
