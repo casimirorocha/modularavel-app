@@ -2,8 +2,12 @@
 
 namespace App\Console\Commands;
 
+use Illuminate\Support\Composer;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Str;
 use Mhmiton\LaravelModulesLivewire\Commands\LivewireMakeCommand;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
 
 class MakeLivewireComponentForModule extends LivewireMakeCommand
 {
@@ -21,6 +25,36 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
      */
     protected $description = 'Command description';
 
+    public function handle()
+    {
+        parent::handle();
+
+        $this->line('running: php artisan optimize:clear');
+
+         $result = $this->askWithCompletion('run artisan optimize:clear command?', [
+             'y' => 1,
+             'n' => 0,
+         ], 'y,n');
+
+         $this->line('result: '. $result);
+
+        $this->dump_autoload();
+    }
+
+
+    private function dump_autoload()
+    {
+        $process = new Process(['composer', 'dump-autoload', '-o']);
+        $process->setTimeout(null);
+
+        try {
+            $process->mustRun();
+            $this->info($process->getOutput());
+        } catch (ProcessFailedException $e) {
+            $this->error($e->getMessage());
+        }
+    }
+
     /**
      * Execute the console command.
      */
@@ -33,18 +67,18 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
         }
 
         return preg_replace(
-            ['/\[namespace\]/', '/\[class\]/', '/\[view\]/', '/\[module_name\]/', '/\[module_lowername\]/', '/\[tag\]/'],
-            [$this->getClassNamespace(), $this->getClassName(), $this->getViewName(), $this->getModuleName(), $this->getModuleLowerName(), $this->getComponentTagForView()],
-            $template,
+            pattern: ['/\[namespace\]/', '/\[class\]/', '/\[view\]/', '/\[module_name\]/', '/\[module_lowername\]/', '/\[tag\]/'],
+            replacement: [$this->getClassNamespace(), $this->getClassName(), $this->getViewName(), $this->getModuleName(), $this->getModuleLowerName(), $this->getComponentTagForView()],
+            subject: $template,
         );
     }
 
     protected function getViewContents(): array|string|null
     {
         return preg_replace(
-            ['/\[quote\]/', '/\[class\]/', '/\[view\]/', '/\[module_name\]/', '/\[module_lowername\]/'],
-            [$this->getComponentQuote(), $this->getClassSourcePath(),$this->getViewSourcePath(), $this->getModuleName(), $this->getModuleLowerName()],
-            file_get_contents($this->component->stub->view),
+            pattern: ['/\[quote\]/', '/\[class\]/', '/\[view\]/', '/\[module_name\]/', '/\[module_lowername\]/', '/\[view_name\]/'],
+            replacement: [$this->getComponentQuote(), $this->getClassSourcePath(),$this->getViewSourcePath(), $this->getModuleName(), $this->getModuleLowerName(), ucfirst($this->component->view->name)],
+            subject: file_get_contents($this->component->stub->view),
         );
     }
 

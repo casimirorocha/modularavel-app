@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Modules\Auth\Livewire\Counter;
 use Modules\Auth\Livewire\Login;
+use Modules\Auth\Livewire\Register;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use Modules\Auth\Livewire\Login;
 */
 
 Route::prefix('auth')->group(function() {
-    Route::get('login', Login::class)->name('auth::livewire.login');
-    Route::get('register', \Modules\Auth\Livewire\Register::class)->name('auth::livewire.register');
+//     Route::get('login', Login::class)->name('auth::livewire.login');
+    Route::get('register', Register::class)->name('auth::livewire.register');
     Route::get('livewire', Counter::class)->name('auth::livewire.counter');
 });

@@ -5,19 +5,33 @@
             <div class="flex flex-col gap-5">
                 <div>
                     <h1 class="text-5xl text-white font-extrabold">
-                        <span class="text-gray-950">Count: </span> <strong>{{ $count }}</strong>
+                        [module_name] - [view_name]
                     </h1>
                 </div>
-                <div class="my-8 flex flex-row gap-5 items-center justify-center">
+                <div>
+                    <h6 class="text-gray-500">Count example: {{ $count }}</h6>
+                </div>
+                <div class="my-3 flex flex-row gap-5 items-center justify-center">
                     <x-button class="font-semibold" wire:click="increment" label="Increment" color="green" icon="plus" size="md" />
                     <x-button class="font-semibold" wire:click="decrement" label="Decrement" color="red" icon="minus" size="md"/>
                 </div>
-                <div class="text-start text-lg font-semibold text-white flex flex-col gap-5">
+                <div class="text-start text-[1rem] font-semibold text-white flex flex-col gap-3">
                     <p><strong>CLASS:</strong> [class]</p>
                     <p><strong>VIEW:</strong> [view]</p>
                     <p><strong>TAG:</strong> {{ $tag }}</p>
+                </div>
+                <div>
+                    <p class="text-lg text-gray-500">[quote]</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+@assets
+<style lang="css">
+    h3 {
+       color: #ef4444;
+    }
+</style>
+@endassets

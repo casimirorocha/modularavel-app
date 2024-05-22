@@ -3,10 +3,14 @@
 namespace Modules\Auth\Livewire;
 
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Illuminate\View\View;
+use Symfony\Component\Routing\Annotation\Route;
 
 #[Layout('auth::layouts.master')]
+#[Title('Auth - Login')]
+#[Route('auth/login')]
 class Login extends Component
 {
     public int $count;
