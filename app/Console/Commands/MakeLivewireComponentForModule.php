@@ -74,10 +74,18 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
 
         // file_put_contents($routesPath, $routes);
 
-        File::append($this->getModulePath().'/routes/livewire.php', "
-\Livewire\Volt\Volt::route('login', \Modules\Auth\Livewire\Login::class)
-                    ->name('auth::livewire.login')
-                    ->prefix('auth');".PHP_EOL);
+        $component = str_replace('/', '\\', $this->getClassSourcePath());
+        $component = str_replace('.php', '::class', $component);
+
+        $className = strtolower($this->getClassName());
+
+        $moduleLowerName = $this->getModuleLowerName();
+
+        $data = "\Livewire\Volt\Volt::route('$className', \\$component)
+                    ->name('$moduleLowerName::livewire.$className')
+                    ->prefix('$moduleLowerName');";
+
+        File::append($this->getModulePath().'/routes/livewire.php', PHP_EOL.$data.PHP_EOL);
     }
 
 

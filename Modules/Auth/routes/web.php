@@ -15,10 +15,10 @@ use Modules\Auth\app\Http\Controllers\AuthController;
 */
 
 // Guest users route
-Route::middleware('guest')->group(function()
+/*Route::middleware('guest')->group(function()
 {
     Route::get('auth', [AuthController::class, 'index']);
-});
+});*/
 
 // Authenticated users route
 Route::middleware('auth')->group(function ()

@@ -1,0 +1,14 @@
+{
+    "name": "UserMedia",
+    "label": "UserMedia",
+    "alias": "usermedia",
+    "description": "manage all usermedia",
+    "keywords": ["usermedia"],
+    "priority": 0,
+    "providers": [
+        "Modules\\UserMedia\\Providers\\UserMediaServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

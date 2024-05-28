@@ -12,4 +12,4 @@
 */
 use Spatie\RouteDiscovery\Discovery\Discover;
 
-Discover::controllers()->in(base_path('Modules/Auth/app/Http'));
+/*Discover::controllers()->in(base_path('Modules/Auth/app/Http'));*/
