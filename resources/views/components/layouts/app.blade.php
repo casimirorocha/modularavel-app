@@ -6,9 +6,9 @@
 
         <title>{{ $title ?? 'Page Title' }}</title>
 
-        <wireui:scripts/>
+        @livewireStyles
 
-        @vite(['resources/**/*.{css,js}', ...\Nwidart\Modules\Module::getAssets()])
+        @vite(['resources/css/app.css', 'resources/js/app.js', ...\Nwidart\Modules\Module::getAssets()])
     </head>
     <body>
         @if(isset($slot))
@@ -16,5 +16,7 @@
         @else
             @yield('content')
         @endif
+
+        @livewireScripts
     </body>
 </html>

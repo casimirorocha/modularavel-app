@@ -7,18 +7,15 @@
     "require": {
         "php": "^8.1",
         "ext-pcntl": "*",
-        "dcblogdev/laravel-module-generator": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
-        "laravel/horizon": "^5.24",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.2",
         "livewire/volt": "^1.6",
         "mhmiton/laravel-modules-livewire": "^2.2",
         "nwidart/laravel-modules": "^10.0",
-        "spatie/laravel-route-discovery": "^1.0",
-        "wireui/wireui": "^1.18"
+        "spatie/laravel-route-discovery": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -31,7 +28,6 @@
     },
     "autoload": {
         "files": [
-            "Modules/Core/app/Helpers/Helpers.php"
         ],
         "psr-4": {
             "App\\": "app/",

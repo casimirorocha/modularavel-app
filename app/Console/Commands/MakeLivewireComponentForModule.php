@@ -2,18 +2,15 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Support\Composer;
-use Illuminate\Support\Facades\Artisan;
+use App\Exceptions\File\IsNotAFileException;
+use App\Exceptions\File\IsNotWriteableException;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Mhmiton\LaravelModulesLivewire\Commands\LivewireMakeCommand;
-use Modules\Auth\Livewire\Login;
-use Spatie\LaravelIgnition\Solutions\SolutionProviders\MissingImportSolutionProvider;
-use Spatie\LaravelIgnition\Solutions\SuggestImportSolution;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
-use function Laravel\Prompts\search;
+use Throwable;
 
 class MakeLivewireComponentForModule extends LivewireMakeCommand
 {
@@ -31,66 +28,101 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
      */
     protected $description = 'Command description';
 
+    /**
+     * @throws Throwable
+     */
     public function handle(): void
     {
         parent::handle();
 
-     /*    $runOptimizeClear = $this->askWithCompletion('run php artisan optimize:clear?', [
-             'y' => true,
-             'n' => false,
-         ], 'y,n');
-
-        $runComposerDump = $this->askWithCompletion('run composer dump-autoload?', [
-            'y' => true,
-            'n' => false,
-        ], 'y,n');*/
-
         $autoAddRoute = $this->askWithCompletion('add route to routes/livewire.php?', [
-            'y' => true,
-            'n' => false,
+            'y',
+            'n',
         ], 'y,n');
 
-        if ($autoAddRoute) {
+        $runComposerDump = $this->askWithCompletion('run composer dump-autoload?', [
+            'y',
+            'n',
+        ], 'y,n');
+
+        $runOptimizeClear = $this->askWithCompletion('run php artisan optimize:clear?', [
+             'y',
+             'n',
+         ], 'y,n');
+
+        if (in_array($runComposerDump, ['y', 'Y', 'yes', 'Yes'])) {
+            $this->dump_autoload();
+        }
+
+        if (in_array($autoAddRoute, ['y', 'Y', 'yes', 'Yes'])) {
             $this->automaticAddRouteAtRouteFile('livewire');
         }
-/*
-        if ($runComposerDump) {
-            // $this->dump_autoload();
-        }
 
-        if ($runOptimizeClear) {
+        if (in_array($runOptimizeClear, ['y', 'Y', 'yes', 'Yes'])) {
             $this->call('optimize:clear');
-        }*/
+        }
     }
 
+    /**
+     * @throws Throwable
+     */
     protected function automaticAddRouteAtRouteFile(string $routeGroupPrefix = null): void
     {
-/*        $routesPath = $this->getModulePath().'/routes/livewire.php';
-        $marker = "// auto-routes: auth:module";
-        $new_route = "Volt::route('login2', Login::class)->name('auth::livewire.login');";
-        $routes = file_get_contents($routesPath);
-
-        $routes = str_replace($marker, $marker.PHP_EOL."    ".$new_route, $routes);*/
-
-        // file_put_contents($routesPath, $routes);
-
         $component = str_replace('/', '\\', $this->getClassSourcePath());
+
         $component = str_replace('.php', '::class', $component);
 
         $className = strtolower($this->getClassName());
 
         $moduleLowerName = $this->getModuleLowerName();
 
-        $data = "\Livewire\Volt\Volt::route('$className', \\$component)
-                    ->name('$moduleLowerName::livewire.$className')
+        $newRouteData = "\Livewire\Volt\Volt::route('$className', \\$component)
+                    ->name('$moduleLowerName::$routeGroupPrefix.$className')
                     ->prefix('$moduleLowerName');";
 
-        File::append($this->getModulePath().'/routes/livewire.php', PHP_EOL.$data.PHP_EOL);
+        $livewireRoutesFile = $this->getModulePath().'/routes/livewire.php';
+
+        $this->ensureFileExists($livewireRoutesFile);
+
+        $this->ensureIsFile($livewireRoutesFile);
+
+        $this->ensureIsWriteableFile($livewireRoutesFile);
+        
+        File::chmod($livewireRoutesFile, '0644');
+
+        File::append($livewireRoutesFile, PHP_EOL.$newRouteData.PHP_EOL);
+
+        $this->warn("New route added in: $livewireRoutesFile");
     }
 
+    /**
+     * @throws Throwable
+     */
+    protected function ensureFileExists(string $path = null): void
+    {
+        throw_unless(File::exists($path), FileNotFoundException::class);
+    }
+
+    /**
+     * @throws Throwable
+     */
+    protected function ensureIsFile(string $path = null): void
+    {
+        throw_unless(File::isFile($path), IsNotAFileException::class);
+    }
+
+    /**
+     * @throws Throwable
+     */
+    protected function ensureIsWriteableFile(string $path = null): void
+    {
+        throw_unless(File::isWritable($path), IsNotWriteableException::class);
+    }
 
     private function dump_autoload(): void
     {
+        $this->warn('running composer dump-autoload....');
+        
         $process = new Process(['composer', 'dump-autoload', '-o']);
         $process->setTimeout(null);
 

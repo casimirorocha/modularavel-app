@@ -13,19 +13,8 @@
 
 
 use Livewire\Volt\Volt;
-use Modules\Auth\Livewire\Login;
-use Modules\Auth\Livewire\Privacyu2;
-use Modules\Auth\Livewire\Register;
-
-Volt::route('register', Register::class)
-    ->name('auth::livewire.register')
-    ->prefix('auth');
-
+use Modules\Auth\Livewire\Pages\Auth\Login;
 
 Volt::route('login', Login::class)
                     ->name('auth::livewire.login')
-                    ->prefix('auth');
-
-\Livewire\Volt\Volt::route('privacy', \Modules\Auth\Livewire\Privacy::class)
-                    ->name('auth::livewire.privacy')
                     ->prefix('auth');

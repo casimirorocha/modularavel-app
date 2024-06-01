@@ -27,7 +27,7 @@ return [
     |
     */
 
-    'custom_modules' => [
+    /*'custom_modules' => [
          'Chat' => [
              'path' => base_path('Modules/Chat'),
              'module_namespace' => 'Modules\\Chat',
@@ -36,6 +36,6 @@ return [
              'name_lower' => 'chat',
              'layout' => 'teste',
          ],
-    ],
+    ],*/
 
 ];
