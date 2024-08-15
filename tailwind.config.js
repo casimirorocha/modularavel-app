@@ -8,8 +8,8 @@ export default {
         wireui
     ],
     content: [
-        "./resources/**/*.{js,css,scss,sass,blade.php}",
-        "./Modules/*/resources/**/*.{js,css,scss,sass,blade.php}",
+        "./resources/**/*.{css,js,ts,blade.php}",
+        "./Modules/*/resources/**/*.{css,js,ts,blade.php}",
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         "./vendor/wireui/wireui/src/*.php",

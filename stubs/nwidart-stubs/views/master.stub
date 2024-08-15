@@ -1,10 +1,8 @@
+@extends('components.layouts.app')
+
 @pushonce('styles')
     @vite([
-        'Modules/$STUDLY_NAME$/resources/assets/sass/app.scss',
-        'Modules/$STUDLY_NAME$/resources/assets/js/app.js'
+        './Modules/$STUDLY_NAME$/resources/assets/sass/app.scss',
+        './Modules/$STUDLY_NAME$/resources/assets/js/app.js'
     ])
 @endpushonce
-
-<x-layouts.app>
-    @yield('content')
-</x-layouts.app>

@@ -8,7 +8,9 @@
 
         @livewireStyles
 
-        @vite(['resources/css/app.css', 'resources/js/app.js', ...\Nwidart\Modules\Module::getAssets()])
+        @stack('styles')
+
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
         @if(isset($slot))

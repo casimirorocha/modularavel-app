@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Blog\Livewire;
+namespace Modules\Post\Livewire;
 
 use Livewire\Component;
 use Illuminate\View\View;
@@ -34,6 +34,6 @@ class Counter extends Component
 
     public function render(): View|string
     {
-        return view('blog::livewire.counter')->layout('blog::layouts.master');
+        return view('post::livewire.counter')->layout('post::layouts.master');
     }
 }

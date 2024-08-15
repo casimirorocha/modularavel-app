@@ -15,7 +15,12 @@ async function getConfig() {
             laravel({
                 input: allPaths,
                 // refresh: true
-                refresh: ['./Modules/**', './app/**', './config/**'],
+                refresh: {
+                    config: {
+                        always: true
+                    },
+                    paths: ['./app/**', './config/**']
+                },
             })
         ]
     });
