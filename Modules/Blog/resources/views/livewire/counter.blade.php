@@ -5,7 +5,7 @@
             <div class="flex flex-col gap-5">
                 <div>
                     <h1 class="text-5xl text-white font-extrabold">
-                        <span class="text-gray-950">Count: </span> <strong>{{ $count }}</strong>
+                        <span class="text-white">Count: </span> <strong>{{ $count }}</strong>
                     </h1>
                 </div>
                 <div class="my-8 flex flex-row gap-5 items-center justify-center">

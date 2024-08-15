@@ -6,8 +6,6 @@
 
         <title>{{ $title ?? 'Page Title' }}</title>
 
-        @livewireStyles
-
         @stack('styles')
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -18,7 +16,5 @@
         @else
             @yield('content')
         @endif
-
-        @livewireScripts
     </body>
 </html>

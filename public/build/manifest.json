@@ -1,0 +1,42 @@
+{
+  "Modules/Auth/resources/assets/css/app.css": {
+    "file": "assets/app-3f251bf3.css",
+    "isEntry": true,
+    "src": "Modules/Auth/resources/assets/css/app.css"
+  },
+  "Modules/Auth/resources/assets/js/app.js": {
+    "file": "assets/app-4ed993c7.js",
+    "isEntry": true,
+    "src": "Modules/Auth/resources/assets/js/app.js"
+  },
+  "Modules/Blog/resources/assets/js/app.js": {
+    "file": "assets/app-c42ce534.js",
+    "isEntry": true,
+    "src": "Modules/Blog/resources/assets/js/app.js"
+  },
+  "Modules/Blog/resources/assets/sass/app.scss": {
+    "file": "assets/app-07689399.css",
+    "isEntry": true,
+    "src": "Modules/Blog/resources/assets/sass/app.scss"
+  },
+  "Modules/Post/resources/assets/js/app.js": {
+    "file": "assets/app-3f7a7dc7.js",
+    "isEntry": true,
+    "src": "Modules/Post/resources/assets/js/app.js"
+  },
+  "Modules/Post/resources/assets/sass/app.scss": {
+    "file": "assets/app-55df9c0c.css",
+    "isEntry": true,
+    "src": "Modules/Post/resources/assets/sass/app.scss"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-8d584237.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-3d343657.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
