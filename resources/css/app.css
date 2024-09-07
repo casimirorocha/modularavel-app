@@ -1,7 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
+
 @tailwind base;
+
+@layer base {
+    html {
+        @apply text-surface;
+        @apply bg-white;
+    }
+    html.dark {
+        @apply text-gray-50;
+        @apply bg-gray-800;
+    }
+}
+
 @tailwind components;
 @tailwind utilities;
 
-h1 {
-    color: red;
+/*
+p {
+    @apply leading-[1.6];
 }
+*/

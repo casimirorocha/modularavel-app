@@ -9,8 +9,6 @@ use Illuminate\View\View;
 use Modules\Auth\Livewire\Forms\LoginForm;
 use Session;
 
-#[Layout('auth::layouts.master')]
-#[Title('Auth - Login')]
 class Login extends Component
 {
     public LoginForm $form;

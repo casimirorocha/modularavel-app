@@ -9,8 +9,8 @@
                     </h1>
                 </div>
                 <div class="my-8 flex flex-row gap-5 items-center justify-center">
-                    <x-button class="font-semibold" wire:click="increment" label="Increment" color="green" icon="plus" size="md" />
-                    <x-button class="font-semibold" wire:click="decrement" label="Decrement" color="red" icon="minus" size="md"/>
+                    <button class="font-semibold" wire:click="increment" label="Increment" color="green" icon="plus" size="md" />
+                    <button class="font-semibold" wire:click="decrement" label="Decrement" color="red" icon="minus" size="md"/>
                 </div>
                 <div class="text-start text-lg font-semibold text-white flex flex-col gap-5">
                     <p><strong>Module:</strong> Modules/Auth</p>

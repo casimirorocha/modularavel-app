@@ -7,7 +7,7 @@ use Livewire\Attributes\Title;
 use Livewire\Component;
 use Illuminate\View\View;
 
-#[Layout('[module_lowername]::layouts.master')]
+#[Layout('$module_lowername::layouts.master')]
 #[Title('[module_name] - [class]')]
 class [class] extends Component
 {

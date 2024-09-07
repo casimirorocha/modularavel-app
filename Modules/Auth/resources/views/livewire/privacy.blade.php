@@ -11,8 +11,8 @@
                     <h6 class="text-gray-500">Count example: {{ $count }}</h6>
                 </div>
                 <div class="my-4 flex flex-col md:flex-row gap-5 items-center justify-center">
-                    <x-button class="font-semibold" wire:click="increment" label="Increment" color="positive" icon="plus" size="lg" />
-                    <x-button class="font-semibold" wire:click="decrement" label="Decrement" color="negative" icon="minus" size="lg"/>
+                    <button class="font-semibold" wire:click="increment" label="Increment" color="positive" icon="plus" size="lg" />
+                    <button class="font-semibold" wire:click="decrement" label="Decrement" color="negative" icon="minus" size="lg"/>
                 </div>
                 <div class="text-start text-xs md:text-[1rem] font-semibold text-white flex flex-col gap-5 mx-11/12">
                     <p><strong>CLASS:</strong> Modules/Auth/Livewire/Privacy.php</p>

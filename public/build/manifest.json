@@ -1,6 +1,6 @@
 {
   "Modules/Auth/resources/assets/css/app.css": {
-    "file": "assets/app-3f251bf3.css",
+    "file": "assets/app-e3b0c442.css",
     "isEntry": true,
     "src": "Modules/Auth/resources/assets/css/app.css"
   },
@@ -10,32 +10,52 @@
     "src": "Modules/Auth/resources/assets/js/app.js"
   },
   "Modules/Blog/resources/assets/js/app.js": {
-    "file": "assets/app-c42ce534.js",
+    "file": "assets/app-3f7a7dc7.js",
     "isEntry": true,
     "src": "Modules/Blog/resources/assets/js/app.js"
   },
   "Modules/Blog/resources/assets/sass/app.scss": {
-    "file": "assets/app-07689399.css",
+    "file": "assets/app-d3c0c4ce.css",
     "isEntry": true,
     "src": "Modules/Blog/resources/assets/sass/app.scss"
   },
+  "Modules/Core/resources/assets/js/app.js": {
+    "file": "assets/app-f5ef5fbf.js",
+    "isEntry": true,
+    "src": "Modules/Core/resources/assets/js/app.js"
+  },
+  "Modules/Core/resources/assets/sass/app.scss": {
+    "file": "assets/app-c42ce534.js",
+    "isEntry": true,
+    "src": "Modules/Core/resources/assets/sass/app.scss"
+  },
+  "Modules/Like/resources/assets/js/app.js": {
+    "file": "assets/app-fbf88a6b.js",
+    "isEntry": true,
+    "src": "Modules/Like/resources/assets/js/app.js"
+  },
+  "Modules/Like/resources/assets/sass/app.scss": {
+    "file": "assets/app-8530b3c3.css",
+    "isEntry": true,
+    "src": "Modules/Like/resources/assets/sass/app.scss"
+  },
   "Modules/Post/resources/assets/js/app.js": {
-    "file": "assets/app-3f7a7dc7.js",
+    "file": "assets/app-97e73ebb.js",
     "isEntry": true,
     "src": "Modules/Post/resources/assets/js/app.js"
   },
   "Modules/Post/resources/assets/sass/app.scss": {
-    "file": "assets/app-55df9c0c.css",
+    "file": "assets/app-3ea2f04d.css",
     "isEntry": true,
     "src": "Modules/Post/resources/assets/sass/app.scss"
   },
   "resources/css/app.css": {
-    "file": "assets/app-8d584237.css",
+    "file": "assets/app-cdef7474.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-3d343657.js",
+    "file": "assets/app-1cfe045b.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }

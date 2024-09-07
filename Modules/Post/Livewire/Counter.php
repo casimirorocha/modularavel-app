@@ -34,6 +34,6 @@ class Counter extends Component
 
     public function render(): View|string
     {
-        return view('post::livewire.counter')->layout('post::layouts.master');
+        return view('post::livewire.counter');
     }
 }

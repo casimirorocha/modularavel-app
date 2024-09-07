@@ -2,5 +2,6 @@
     "Auth": true,
     "Core": true,
     "Blog": true,
-    "Post": true
+    "Post": true,
+    "Like": true
 }

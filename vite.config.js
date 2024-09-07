@@ -19,7 +19,7 @@ async function getConfig() {
                     config: {
                         always: true
                     },
-                    paths: ['./app/**', './config/**']
+                    paths: ['./app/**', './config/**', './Modules/**']
                 },
             })
         ]

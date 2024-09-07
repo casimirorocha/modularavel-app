@@ -2,6 +2,6 @@
     <div>
         <h1>{{ $count }}</h1>
     </div>
-    <x-button wire:click="increment" label="Increment" />
-    <x-button wire:click="decrement" label="Decrement"/>
+    <x-core::ui.button wire:click="increment">Increment</x-core::ui.button>
+    <x-core::ui.button wire:click="decrement">Decrement</x-core::ui.button>
 </div>

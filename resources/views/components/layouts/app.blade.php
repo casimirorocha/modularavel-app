@@ -10,11 +10,15 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body>
-        @if(isset($slot))
-            {!! $slot !!}
-        @else
-            @yield('content')
-        @endif
+    <body class="font-[sans-serif]">
+        {{--<livewire:core::navigation.header />--}}
+
+        <main>
+            @if(isset($slot))
+                {!! $slot !!}
+            @else
+                @yield('content')
+            @endif
+        </main>
     </body>
 </html>
