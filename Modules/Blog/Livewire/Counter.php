@@ -2,8 +2,8 @@
 
 namespace Modules\Blog\Livewire;
 
-use Livewire\Component;
 use Illuminate\View\View;
+use Livewire\Component;
 
 class Counter extends Component
 {
@@ -34,6 +34,6 @@ class Counter extends Component
 
     public function render(): View|string
     {
-        return view('blog::livewire.counter')->layout('blog::layouts.master');
+        return view('blog::livewire.counter');
     }
 }

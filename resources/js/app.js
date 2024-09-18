@@ -1,4 +1,4 @@
-import {
+const {
     Modal,
     Input,
     Ripple,
@@ -6,7 +6,16 @@ import {
     Dropdown,
     Tooltip,
     initTWE
-} from "tw-elements";
+} = await import("tw-elements");
+
+window.iniTWE = initTWE;
+window.Tooltip = Tooltip;
+window.Modal = Modal;
+window.Input = Input;
+window.Ripple = Ripple;
+window.Collapse = Collapse;
+window.Dropdown = Dropdown;
+window.Tooltip = Tooltip;
 
 initTWE({
     Modal,

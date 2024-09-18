@@ -5,52 +5,52 @@
     "src": "Modules/Auth/resources/assets/css/app.css"
   },
   "Modules/Auth/resources/assets/js/app.js": {
-    "file": "assets/app-c42ce534.js",
+    "file": "assets/app-4ed993c7.js",
     "isEntry": true,
     "src": "Modules/Auth/resources/assets/js/app.js"
   },
   "Modules/Blog/resources/assets/js/app.js": {
-    "file": "assets/app-97e73ebb.js",
+    "file": "assets/app-fbf88a6b.js",
     "isEntry": true,
     "src": "Modules/Blog/resources/assets/js/app.js"
   },
   "Modules/Blog/resources/assets/sass/app.scss": {
-    "file": "assets/app-d3c0c4ce.css",
+    "file": "assets/app-9c3d6d69.css",
     "isEntry": true,
     "src": "Modules/Blog/resources/assets/sass/app.scss"
   },
   "Modules/Core/resources/assets/js/app.js": {
-    "file": "assets/app-fbf88a6b.js",
+    "file": "assets/app-f5ef5fbf.js",
     "isEntry": true,
     "src": "Modules/Core/resources/assets/js/app.js"
   },
   "Modules/Core/resources/assets/sass/app.scss": {
-    "file": "assets/app-4ed993c7.js",
+    "file": "assets/app-c42ce534.js",
     "isEntry": true,
     "src": "Modules/Core/resources/assets/sass/app.scss"
   },
   "Modules/Like/resources/assets/js/app.js": {
-    "file": "assets/app-f5ef5fbf.js",
+    "file": "assets/app-3f7a7dc7.js",
     "isEntry": true,
     "src": "Modules/Like/resources/assets/js/app.js"
   },
   "Modules/Like/resources/assets/sass/app.scss": {
-    "file": "assets/app-8530b3c3.css",
+    "file": "assets/app-970033fd.css",
     "isEntry": true,
     "src": "Modules/Like/resources/assets/sass/app.scss"
   },
   "Modules/Post/resources/assets/js/app.js": {
-    "file": "assets/app-3f7a7dc7.js",
+    "file": "assets/app-97e73ebb.js",
     "isEntry": true,
     "src": "Modules/Post/resources/assets/js/app.js"
   },
   "Modules/Post/resources/assets/sass/app.scss": {
-    "file": "assets/app-3ea2f04d.css",
+    "file": "assets/app-3c510b78.css",
     "isEntry": true,
     "src": "Modules/Post/resources/assets/sass/app.scss"
   },
   "resources/css/app.css": {
-    "file": "assets/app-3f1bf6e4.css",
+    "file": "assets/app-3bac9510.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },

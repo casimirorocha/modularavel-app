@@ -9,8 +9,8 @@
                     </h1>
                 </div>
                 <div class="my-8 flex flex-row gap-5 items-center justify-center">
-                    <x-core::ui.button wire:click="increment" bg-color="success">Increment</x-core::ui.button>
-                    <x-core::ui.button wire:click="decrement" bg-color="danger">Decrement</x-core::ui.button>
+                    <x-core::ui.button wire:click="increment" class="bg-green-800">Increment</x-core::ui.button>
+                    <x-core::ui.button wire:click="decrement" class="bg-red-800">Decrement</x-core::ui.button>
                 </div>
                 <div class="text-start text-lg font-semibold text-white flex flex-col gap-5">
                     <p><strong>CLASS:</strong> Modules/Auth/Livewire/About.php</p>
