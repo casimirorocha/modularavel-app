@@ -7,15 +7,17 @@ import colorsTheme from "tailwindcss/colors";
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
+        "./Modules/*/resources/**/*.{js,ts,blade.php}",
+        './resources/**/*.{js,ts,blade.php}',
+        "./node_modules/tw-elements/js/**/*.js",
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
-        "./node_modules/tw-elements/js/**/*.js",
-        "./Modules/*/resources/**/*.{css,scss,js,ts,blade.php}",
-        './resources/**/*.{css,scss,js,ts,blade.php}',
     ],
     theme: {
         extend: {
             colors: {
+                ...colorsTheme,
+                success: colorsTheme.green,
                 gray: colorsTheme.slate
             },
             fontFamily: {
@@ -23,7 +25,7 @@ export default {
             },
         },
     },
-    darkMode: "class",
+    // darkMode: "class",
     plugins: [
         tw_elements
     ],

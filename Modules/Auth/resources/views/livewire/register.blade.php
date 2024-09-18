@@ -4,7 +4,7 @@
         <div class="flex flex-col gap-5">
             <div>
                 <h1 class="text-5xl text-white font-extrabold">
-                    <span class="text-gray-950">The <code>Register</code> livewire component is loaded from the <code>Auth</code> module.</span>
+                    <span>The <code>Register</code> livewire component is loaded from the <code>Auth</code> module.</span>
                 </h1>
             </div>
         </div>
