@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
 import laravel from 'laravel-vite-plugin';
 import collectModuleAssetsPaths from './vite-module-loader.cjs';
 
@@ -17,9 +17,10 @@ async function getConfig() {
                 // refresh: true
                 refresh: {
                     config: {
-                        always: true
+                        always: true,
+                        log: true,
                     },
-                    paths: ['./app/**', './config/**', './Modules/**']
+                    paths: ['./app/**', './config/**']
                 },
             })
         ]

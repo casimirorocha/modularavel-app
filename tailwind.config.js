@@ -1,21 +1,22 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 
-const colorsTheme = require('tailwindcss/colors');
+import tw_elements from "tw-elements/plugin.cjs";
+
+import colorsTheme from "tailwindcss/colors";
 
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
-        "./resources/**/*.{css,js,ts,blade.php}",
-        "./Modules/*/resources/**/*.{css,js,ts,blade.php}",
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
-        './resources/**/*.{js,jsx,ts,tsx,css,sass,scss,vue,blade.php}',
-        "./node_modules/tw-elements/js/**/*.js"
+        "./node_modules/tw-elements/js/**/*.js",
+        "./Modules/*/resources/**/*.{css,scss,js,ts,blade.php}",
+        './resources/**/*.{css,scss,js,ts,blade.php}',
     ],
     theme: {
         extend: {
             colors: {
-                gray: colorsTheme.neutral
+                gray: colorsTheme.slate
             },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
@@ -24,6 +25,6 @@ export default {
     },
     darkMode: "class",
     plugins: [
-        require("tw-elements/plugin.cjs")
+        tw_elements
     ],
 };
