@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Livewire\Volt\Volt;
+use Modules\Blog\Livewire\Artigos;
 use Modules\Blog\Livewire\Counter;
+use Modules\Blog\Livewire\Posts;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +20,11 @@ use Modules\Blog\Livewire\Counter;
 Route::prefix('blog')->group(function() {
     Route::get('livewire', Counter::class)->name('blog::livewire.counter');
 });
+
+Volt::route('artigos', Artigos::class)
+                    ->name('blog::livewire.artigos')
+                    ->prefix('blog');
+
+Volt::route('posts', Posts::class)
+                    ->name('blog::livewire.posts')
+                    ->prefix('blog');

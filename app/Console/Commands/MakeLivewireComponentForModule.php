@@ -19,7 +19,7 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
      *
      * @var string
      */
-    protected $signature = 'modularavel:make-livewire {component} {module} {--view=} {--force} {--inline} {--stub=} {--custom}';
+    protected $signature = 'module:make-livewire {component} {module} {--view=} {--force} {--inline} {--stub=} {--custom}';
 
     /**
      * The console command description.
@@ -35,30 +35,21 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
     {
         parent::handle();
 
-        $autoAddRoute = $this->askWithCompletion('add route to routes/livewire.php?', [
-            'y',
-            'n',
-        ], 'y,n');
+        $autoAddRoute = $this->confirm('add route to routes/livewire.php?', true);
 
-        $runComposerDump = $this->askWithCompletion('run composer dump-autoload?', [
-            'y',
-            'n',
-        ], 'y,n');
+        $runComposerDump = $this->confirm('run composer dump-autoload?', true);
 
-        $runOptimizeClear = $this->askWithCompletion('run php artisan optimize:clear?', [
-             'y',
-             'n',
-         ], 'y,n');
+        $runOptimizeClear = $this->confirm('run php artisan optimize:clear?', true);
 
-        if (in_array($runComposerDump, ['y', 'Y', 'yes', 'Yes'])) {
+        if ($autoAddRoute) {
             $this->dump_autoload();
         }
 
-        if (in_array($autoAddRoute, ['y', 'Y', 'yes', 'Yes'])) {
+        if ($runComposerDump) {
             $this->automaticAddRouteAtRouteFile('livewire');
         }
 
-        if (in_array($runOptimizeClear, ['y', 'Y', 'yes', 'Yes'])) {
+        if ($runOptimizeClear) {
             $this->call('optimize:clear');
         }
     }
@@ -87,8 +78,10 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
         $this->ensureIsFile($livewireRoutesFile);
 
         $this->ensureIsWriteableFile($livewireRoutesFile);
-        
+
         File::chmod($livewireRoutesFile, '0644');
+
+        File::replaceInFile($newRouteData, null, $livewireRoutesFile);
 
         File::append($livewireRoutesFile, PHP_EOL.$newRouteData.PHP_EOL);
 
@@ -122,7 +115,7 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
     private function dump_autoload(): void
     {
         $this->warn('running composer dump-autoload....');
-        
+
         $process = new Process(['composer', 'dump-autoload', '-o']);
         $process->setTimeout(null);
 

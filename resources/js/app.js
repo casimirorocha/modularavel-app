@@ -1,15 +1,8 @@
-const {
-    Modal,
-    Input,
-    Ripple,
-    Collapse,
-    Dropdown,
-    Tooltip,
-    initTWE
-} = await import("tw-elements");
+import {Collapse, Dropdown, initTWE, Input, Modal, Ripple, Tooltip} from "tw-elements";
+import './bootstrap';
 
 window.iniTWE = initTWE;
-window.Tooltip = Tooltip;
+
 window.Modal = Modal;
 window.Input = Input;
 window.Ripple = Ripple;
@@ -25,8 +18,6 @@ initTWE({
     Dropdown,
     Tooltip
 });
-
-import './bootstrap';
 
 /*
 import.meta.glob([

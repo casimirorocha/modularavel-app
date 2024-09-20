@@ -4,7 +4,7 @@
             <div class="flex flex-col gap-5">
                 <div>
                     <h1 class="text-5xl text-white font-extrabold">
-                        [module_name] - [view_name]
+                        Blog - Posts
                     </h1>
                 </div>
                 <div>
@@ -15,12 +15,15 @@
                     <x-core::ui.button class="font-semibold" wire:click="decrement" label="Decrement" color="negative" icon="minus" size="md"/>
                 </div>
                 <div class="text-start text-xs md:text-[1rem] font-semibold text-white flex flex-col gap-5 mx-11/12">
-                    <p><strong>CLASS:</strong> [class]</p>
-                    <p><strong>VIEW:</strong> [view]</p>
+                    <p><strong>CLASS:</strong> Modules/Blog/Livewire/Posts.php</p>
+                    <p><strong>VIEW:</strong> Modules/Blog/Resources/views/livewire/posts.blade.php</p>
                     <p><strong>TAG:</strong> {{ $tag }}</p>
                 </div>
                 <div>
-                    <p class="text-lg text-gray-500 example">[quote]</p>
+                    <a href="{{ route('blog::livewire.artigos') }}" wire:navigate>Go artigos</a>
+                </div>
+                <div>
+                    <p class="text-lg text-gray-500 example">The <code>Posts</code> livewire component is loaded from the <code>Blog</code> module.</p>
                 </div>
             </div>
         </div>

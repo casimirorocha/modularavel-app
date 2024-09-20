@@ -4,23 +4,26 @@
             <div class="flex flex-col gap-5">
                 <div>
                     <h1 class="text-5xl text-white font-extrabold">
-                        [module_name] - [view_name]
+                        Blog - Artigos
                     </h1>
                 </div>
                 <div>
                     <h6 class="text-gray-500">Count example: {{ $count }}</h6>
                 </div>
                 <div class="my-4 flex flex-row gap-5 items-center justify-center">
-                    <x-core::ui.button class="font-semibold" wire:click="increment" label="Increment" color="positive" icon="plus" size="md" />
-                    <x-core::ui.button class="font-semibold" wire:click="decrement" label="Decrement" color="negative" icon="minus" size="md"/>
+                    <x-core::ui.button class="font-semibold" wire:click="increment" label="Increment" bg-color="green-800" icon="plus" size="md" />
+                    <x-core::ui.button class="font-semibold" wire:click="decrement" label="Decrement" bg-color="red-500" icon="minus" size="md" />
                 </div>
                 <div class="text-start text-xs md:text-[1rem] font-semibold text-white flex flex-col gap-5 mx-11/12">
-                    <p><strong>CLASS:</strong> [class]</p>
-                    <p><strong>VIEW:</strong> [view]</p>
+                    <p><strong>CLASS:</strong> Modules/Blog/Livewire/Artigos.php</p>
+                    <p><strong>VIEW:</strong> Modules/Blog/Resources/views/livewire/artigos.blade.php</p>
                     <p><strong>TAG:</strong> {{ $tag }}</p>
                 </div>
                 <div>
-                    <p class="text-lg text-gray-500 example">[quote]</p>
+                    <a href="{{ route('blog::livewire.posts') }}" wire:navigate>Go posts</a>
+                </div>
+                <div>
+                    <p class="text-lg text-gray-500 example">The <code>Artigos</code> livewire component is loaded from the <code>Blog</code> module.</p>
                 </div>
             </div>
         </div>

@@ -4,8 +4,8 @@
 
 @layer base {
     html {
-        @apply text-surface;
-        @apply bg-white;
+        /*@apply text-surface;
+        @apply bg-white;*/
     }
     html.dark {
         @apply text-gray-50;
