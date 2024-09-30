@@ -28,7 +28,7 @@
 
             <div
                 class="mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0">
-                <a href="#!">
+                <a href="#">
                     <img
                         class="rounded-t-lg"
                         src="https://tecdn.b-cdn.net/img/new/standard/city/043.webp"
@@ -49,7 +49,7 @@
 
             <div
                 class="mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0">
-                <a href="#!">
+                <a href="#">
                     <img
                         class="rounded-t-lg"
                         src="https://tecdn.b-cdn.net/img/new/standard/city/042.webp"
