@@ -1,6 +1,7 @@
 @extends('core::layouts.master', ['title' => 'Core page'])
 
 @section('content')
+    <livewire:core::modal />
     <div class="container">
         <div class="grid-cols-1 sm:grid md:grid-cols-5">
             <div
