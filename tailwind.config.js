@@ -10,7 +10,7 @@ export default {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         "./Modules/*/resources/**/*.{css,scss,sass,js,ts,blade.php}",
-        './resources/**/*.{css,sass,scss,js,ts,blade.php}',
+        './resources/*/**/*.{css,sass,scss,js,ts,blade.php}',
         "./node_modules/tw-elements/js/**/*.js",
     ],
     theme: {
