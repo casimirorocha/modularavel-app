@@ -1,11 +1,12 @@
-@extends('core::layouts.master', ['title' => 'Core page'])
+@extends('core::layouts.master')
 
 @section('content')
-    <livewire:core::modal />
-    <div class="container">
-        <div class="grid-cols-1 sm:grid md:grid-cols-5">
-            <div
-                class="mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0">
+
+		<livewire:core::modal />
+
+		<div class="container">
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4">
+            <div class="mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0">
                 <a href="{{ route('auth::livewire.login') }}" wire:navigate>
                     <img
                         class="rounded-t-lg"

@@ -2,11 +2,13 @@
 
 namespace Modules\Auth\Livewire;
 
-use Livewire\Attributes\Layout;
-use Livewire\Component;
 use Illuminate\View\View;
+use Livewire\Attributes\Layout;
+use Livewire\Attributes\Title;
+use Livewire\Component;
 
-#[Layout('auth::layouts.master')]
+#[Layout('auth::layouts.master', ['options' => []])]
+#[Title('Xxx')]
 class Register extends Component
 {
     public function render(): View|string

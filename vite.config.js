@@ -20,7 +20,7 @@ async function getConfig() {
                         always: true,
                         log: true,
                     },
-                    paths: ['./app/**', './config/**']
+                    paths: ['./app/**', './config/**', './Modules/**']
                 },
             })
         ]

@@ -15,22 +15,22 @@
     "src": "Modules/Blog/resources/assets/js/app.js"
   },
   "Modules/Blog/resources/assets/sass/app.scss": {
-    "file": "assets/app-9c3d6d69.css",
+    "file": "assets/app-f20da2b0.css",
     "isEntry": true,
     "src": "Modules/Blog/resources/assets/sass/app.scss"
   },
   "Modules/Core/resources/assets/js/app.js": {
-    "file": "assets/app-fbf88a6b.js",
+    "file": "assets/app-f5ef5fbf.js",
     "isEntry": true,
     "src": "Modules/Core/resources/assets/js/app.js"
   },
   "Modules/Core/resources/assets/sass/app.scss": {
-    "file": "assets/app-c42ce534.js",
+    "file": "assets/app-97e73ebb.js",
     "isEntry": true,
     "src": "Modules/Core/resources/assets/sass/app.scss"
   },
   "Modules/Like/resources/assets/js/app.js": {
-    "file": "assets/app-97e73ebb.js",
+    "file": "assets/app-fbf88a6b.js",
     "isEntry": true,
     "src": "Modules/Like/resources/assets/js/app.js"
   },
@@ -40,7 +40,7 @@
     "src": "Modules/Like/resources/assets/sass/app.scss"
   },
   "Modules/Post/resources/assets/js/app.js": {
-    "file": "assets/app-f5ef5fbf.js",
+    "file": "assets/app-c42ce534.js",
     "isEntry": true,
     "src": "Modules/Post/resources/assets/js/app.js"
   },
@@ -50,12 +50,12 @@
     "src": "Modules/Post/resources/assets/sass/app.scss"
   },
   "resources/css/app.css": {
-    "file": "assets/app-3bac9510.css",
+    "file": "assets/app-e0b7e3e1.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-900c0735.js",
+    "file": "assets/app-1b9c19f8.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }

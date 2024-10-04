@@ -10,6 +10,7 @@
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 use Spatie\RouteDiscovery\Discovery\Discover;
 
-/*Discover::controllers()->in(base_path('Modules/Auth/app/Http'));*/
+Discover::controllers()->in(module_path('Auth', '/app/Http/Controllers'));

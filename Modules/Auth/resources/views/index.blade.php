@@ -1,4 +1,4 @@
-@extends('auth::layouts.master')
+@extends('auth::layouts.master', ['title' => 'Core page'])
 
 @section('content')
     <div class="flex items-center justify-center fixed start-0 end-0 bottom-0 top-0">

@@ -13,8 +13,9 @@
 
 
 use Livewire\Volt\Volt;
-use Modules\Auth\Livewire\Pages\Auth\Login;
+use Modules\Auth\Livewire\Register;
 
-Volt::route('login', Login::class)
-                    ->name('auth::livewire.login')
-                    ->prefix('auth');
+Route::prefix('auth')->group(function () {
+	Route::view('login', 'auth::livewire.pages.auth.login')->name('auth::livewire.login');
+	Volt::route('register', Register::class)->name('auth::livewire.register');
+});

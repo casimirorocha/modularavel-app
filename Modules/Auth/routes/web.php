@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\Auth\app\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +22,6 @@ use Modules\Auth\app\Http\Controllers\AuthController;
 // Authenticated users route
 Route::middleware('auth')->group(function ()
 {
-
     // Routes only for users with verified email
     Route::middleware('verified')->group(function() {
 

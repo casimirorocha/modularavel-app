@@ -5,7 +5,6 @@ namespace Modules\Auth\app\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class AuthController extends Controller
 {
@@ -14,7 +13,7 @@ class AuthController extends Controller
      */
     public function index()
     {
-        return view('auth::index');
+        return view('auth::livewire.pages.auth.login');
     }
 
     /**
@@ -22,7 +21,7 @@ class AuthController extends Controller
      */
     public function create()
     {
-        return view('auth::create');
+        return view('auth::livewire.pages.auth.register');
     }
 
     /**

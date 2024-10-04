@@ -6,7 +6,8 @@
         data-twe-toggle="modal"
         data-twe-target="#exampleModalFirst"
         data-twe-ripple-init
-        data-twe-ripple-color="light">
+        data-twe-ripple-color="light"
+		>
         Open first modal
     </button>
 
