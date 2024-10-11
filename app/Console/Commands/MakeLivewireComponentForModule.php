@@ -37,16 +37,12 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
 
         $autoAddRoute = $this->confirm('add route to routes/livewire.php?', true);
 
-        $runComposerDump = $this->confirm('run composer dump-autoload?', true);
-
         $runOptimizeClear = $this->confirm('run php artisan optimize:clear?', true);
 
         if ($autoAddRoute) {
-            $this->dump_autoload();
-        }
+					$this->automaticAddRouteAtRouteFile('livewire');
 
-        if ($runComposerDump) {
-            $this->automaticAddRouteAtRouteFile('livewire');
+            // $this->dump_autoload();
         }
 
         if ($runOptimizeClear) {
@@ -54,10 +50,10 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
         }
     }
 
-    /**
-     * @throws Throwable
-     */
-    protected function automaticAddRouteAtRouteFile(string $routeGroupPrefix = null): void
+	/**
+	 * @throws Throwable
+	 */
+	protected function automaticAddRouteAtRouteFile(string $routeGroupPrefix = null): void
     {
         $component = str_replace('/', '\\', $this->getClassSourcePath());
 
@@ -79,11 +75,7 @@ class MakeLivewireComponentForModule extends LivewireMakeCommand
 
         $this->ensureIsWriteableFile($livewireRoutesFile);
 
-        File::chmod($livewireRoutesFile, '0644');
-
-        File::replaceInFile($newRouteData, null, $livewireRoutesFile);
-
-        File::append($livewireRoutesFile, PHP_EOL.$newRouteData.PHP_EOL);
+       	File::append($livewireRoutesFile, PHP_EOL.$newRouteData.PHP_EOL);
 
         $this->warn("New route added in: $livewireRoutesFile");
     }

@@ -18,5 +18,5 @@ return [
 	|
 	*/
 
-	'theme' => env('CORE_THEME_MODE', 'auto'),
+	'theme' => env('CORE_THEME_MODE', 'dark'),
 ];

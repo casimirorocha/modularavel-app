@@ -4,7 +4,7 @@
             <div class="flex flex-col gap-5">
                 <div>
                     <h1 class="text-[1.2em] text-white font-extrabold">
-                        [view_name]
+                        Teste
                     </h1>
                 </div>
                 <div>
@@ -15,12 +15,12 @@
                     <x-core::ui.button wire:click="decrement" class="bg-red-800">Decrement</x-core::ui.button>
                 </div>
                 <div class="text-start text-xs md:text-[1rem] font-semibold text-white flex flex-col gap-5 mx-11/12">
-                    <p><strong>CLASS:</strong> [class]</p>
-                    <p><strong>VIEW:</strong> [view]</p>
+                    <p><strong>CLASS:</strong> Modules/Blog/Livewire/Teste.php</p>
+                    <p><strong>VIEW:</strong> Modules/Blog/Resources/views/livewire/teste.blade.php</p>
                     <p><strong>TAG:</strong> {{ $tag }}</p>
                 </div>
                 <div>
-                    <p class="text-sm text-gray-500">[quote]</p>
+                    <p class="text-sm text-gray-500">The <code>Teste</code> livewire component is loaded from the <code>Blog</code> module.</p>
                 </div>
             </div>
         </div>
