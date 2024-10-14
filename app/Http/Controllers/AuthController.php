@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use JetBrains\PhpStorm\NoReturn;
+use Spatie\RouteDiscovery\Attributes\Route;
+
 
 class AuthController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
-    public function __invoke(Request $request)
-    {
-        return "oiiiiiiiiii";
-    }
+
+	#[NoReturn] #[Route('/loginx', 'login')]
+	public function loginx()
+	{
+		dd("asasas");
+	}
 }

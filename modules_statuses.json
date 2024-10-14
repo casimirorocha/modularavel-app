@@ -1,7 +1,10 @@
 {
-    "Auth": true,
-    "Core": true,
-    "Blog": true,
-    "Post": true,
-    "Like": true
+	"Auth": true,
+	"Core": true,
+	"Blog": true,
+	"Post": true,
+	"Like": true,
+	"Modularavel": true,
+	"Groups": true,
+	"Friends": true
 }

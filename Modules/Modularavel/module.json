@@ -1,0 +1,11 @@
+{
+	"name": "Modularavel",
+	"alias": "modularavel",
+	"description": "",
+	"keywords": [],
+	"priority": 0,
+	"providers": [
+		"Modules\\Modularavel\\app\\Providers\\ModularavelServiceProvider"
+	],
+	"files": []
+}

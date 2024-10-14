@@ -1,0 +1,24 @@
+<div>
+	<div class="flex bg-gray-900 items-center justify-center fixed start-0 end-0 bottom-0 top-0">
+		<div
+			class="transition-colors bg-gray-800 px-6 py-8 shadow-2xl text-center rounded-2xl border-2 border-gray-500">
+			<div class="flex flex-col gap-5">
+				<div>
+					<h1 class="text-5xl text-white font-extrabold">
+						<span>Count: </span> <strong>{{ $count }}</strong>
+					</h1>
+				</div>
+				<div class="my-8 flex flex-row gap-5 items-center justify-center">
+					<x-core::ui.button wire:click="increment" class="bg-green-800">Increment</x-core::ui.button>
+					<x-core::ui.button wire:click="decrement" class="bg-red-800">Decrement</x-core::ui.button>
+				</div>
+				<div class="text-start text-lg font-semibold text-white flex flex-col gap-5">
+					<p><strong>Module:</strong> Modules/Friends</p>
+					<p><strong>CLASS:</strong> Modules/Friends/Livewire/Counter.php</p>
+					<p><strong>VIEW:</strong> Modules/Friends/Resources/views/livewire/counter.blade.php</p>
+					<p><strong>TAG:</strong> &lt;livewire:friends::counter/&gt;</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

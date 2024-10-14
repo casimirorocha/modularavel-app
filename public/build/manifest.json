@@ -1,16 +1,16 @@
 {
-  "Modules/Auth/resources/assets/css/app.css": {
-    "file": "assets/app-e3b0c442.css",
+  "Modules/Auth/resources/assets/css/auth-module.css": {
+    "file": "assets/auth-module-e3b0c442.css",
     "isEntry": true,
-    "src": "Modules/Auth/resources/assets/css/app.css"
+    "src": "Modules/Auth/resources/assets/css/auth-module.css"
   },
-  "Modules/Auth/resources/assets/js/app.js": {
-    "file": "assets/app-4ed993c7.js",
+  "Modules/Auth/resources/assets/js/auth-module.js": {
+    "file": "assets/auth-module-4ed993c7.js",
     "isEntry": true,
-    "src": "Modules/Auth/resources/assets/js/app.js"
+    "src": "Modules/Auth/resources/assets/js/auth-module.js"
   },
   "Modules/Blog/resources/assets/js/app.js": {
-    "file": "assets/app-3f7a7dc7.js",
+    "file": "assets/app-fbf88a6b.js",
     "isEntry": true,
     "src": "Modules/Blog/resources/assets/js/app.js"
   },
@@ -20,14 +20,24 @@
     "src": "Modules/Blog/resources/assets/sass/app.scss"
   },
   "Modules/Core/resources/assets/js/app.js": {
-    "file": "assets/app-c42ce534.js",
+    "file": "assets/app-4ed993c7.js",
     "isEntry": true,
     "src": "Modules/Core/resources/assets/js/app.js"
   },
   "Modules/Core/resources/assets/sass/app.scss": {
-    "file": "assets/app-f5ef5fbf.js",
+    "file": "assets/app-0853af61.css",
     "isEntry": true,
     "src": "Modules/Core/resources/assets/sass/app.scss"
+  },
+  "Modules/Groups/resources/assets/js/app.js": {
+    "file": "assets/app-c42ce534.js",
+    "isEntry": true,
+    "src": "Modules/Groups/resources/assets/js/app.js"
+  },
+  "Modules/Groups/resources/assets/sass/app.scss": {
+    "file": "assets/app-adbc5395.css",
+    "isEntry": true,
+    "src": "Modules/Modularavel/resources/assets/sass/app.scss"
   },
   "Modules/Like/resources/assets/js/app.js": {
     "file": "assets/app-97e73ebb.js",
@@ -39,8 +49,18 @@
     "isEntry": true,
     "src": "Modules/Like/resources/assets/sass/app.scss"
   },
+  "Modules/Modularavel/resources/assets/js/app.js": {
+    "file": "assets/app-3f7a7dc7.js",
+    "isEntry": true,
+    "src": "Modules/Modularavel/resources/assets/js/app.js"
+  },
+  "Modules/Modularavel/resources/assets/sass/app.scss": {
+    "file": "assets/app-adbc5395.css",
+    "isEntry": true,
+    "src": "Modules/Modularavel/resources/assets/sass/app.scss"
+  },
   "Modules/Post/resources/assets/js/app.js": {
-    "file": "assets/app-fbf88a6b.js",
+    "file": "assets/app-f5ef5fbf.js",
     "isEntry": true,
     "src": "Modules/Post/resources/assets/js/app.js"
   },

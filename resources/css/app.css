@@ -3,17 +3,19 @@
 @tailwind base;
 
 @layer base {
-    html {
-        /*@apply text-surface;
-        @apply bg-white;*/
-    }
-    html.dark {
-        @apply text-gray-50;
-        @apply bg-gray-800;
-    }
+	html {
+		/*@apply text-surface;
+		@apply bg-white;*/
+	}
+
+	html.dark {
+		@apply text-gray-50;
+		@apply bg-gray-800;
+	}
 }
 
 @tailwind components;
+
 @tailwind utilities;
 
 /*

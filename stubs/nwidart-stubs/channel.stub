@@ -4,7 +4,6 @@ namespace $NAMESPACE$;
 
 class $CLASS$
 {
-
     /**
      * Create a new channel instance.
      */
@@ -12,7 +11,7 @@ class $CLASS$
     {
         //
     }
-    
+
     /**
      * Authenticate the user's access to the channel.
      */
@@ -20,5 +19,5 @@ class $CLASS$
     {
         //
     }
-   
+
 }

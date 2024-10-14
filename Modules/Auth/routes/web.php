@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\Auth\app\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,26 +15,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Guest users route
-/*Route::middleware('guest')->group(function()
-{
-    Route::get('auth', [AuthController::class, 'index']);
-});*/
+Route::middleware('guest')->group(function () {
+	Route::get('auth', [AuthController::class, 'index']);
+});
 
 // Authenticated users route
-Route::middleware('auth')->group(function ()
-{
-    // Routes only for users with verified email
-    Route::middleware('verified')->group(function() {
+Route::middleware('auth')->group(function () {
+	// Routes only for users with verified email
+	Route::middleware('verified')->group(function () {
 
-    });
+	});
 
-    // Routes that require authenticated user password confirmation
-    Route::middleware('password.confirm')->group(function() {
+	// Routes that require authenticated user password confirmation
+	Route::middleware('password.confirm')->group(function () {
 
-    });
+	});
 
-    // Admin users route
-    Route::prefix('admin/auth-module')->middleware('admin.only')->group(function() {
+	// Admin users route
+	Route::prefix('admin/auth-module')->middleware('admin.only')->group(function () {
 
-    });
+	});
 });

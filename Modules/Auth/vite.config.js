@@ -1,16 +1,16 @@
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
+import { defineConfig } from "vite";
+import laravel from "laravel-vite-plugin";
 
 export const paths = [
-    'Modules/Auth/resources/assets/css/app.css',
-    'Modules/Auth/resources/assets/js/app.js',
+	"Modules/Auth/resources/assets/css/auth-module.css",
+	"Modules/Auth/resources/assets/js/auth-module.js",
 ];
 
 export default defineConfig({
-    plugins: [
-        laravel({
-            input: paths,
-            refresh: true
-        })
-    ]
+	plugins: [
+		laravel({
+			input: paths,
+			refresh: true,
+		}),
+	],
 });

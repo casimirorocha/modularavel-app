@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\Like\app\Http\Controllers\LikeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,27 +14,25 @@ use Modules\Like\app\Http\Controllers\LikeController;
 */
 
 // Guest users route
-Route::middleware('guest')->group(function()
-{
-    Route::get('like', [LikeController::class, 'index']);
+Route::middleware('guest')->group(function () {
+	Route::view('like', 'like::index');
 });
 
 // Authenticated users route
-Route::middleware('auth')->group(function ()
-{
+Route::middleware('auth')->group(function () {
 
-    // Routes only for users with verified email
-    Route::middleware('verified')->group(function() {
+	// Routes only for users with verified email
+	Route::middleware('verified')->group(function () {
 
-    });
+	});
 
-    // Routes that require authenticated user password confirmation
-    Route::middleware('password.confirm')->group(function() {
+	// Routes that require authenticated user password confirmation
+	Route::middleware('password.confirm')->group(function () {
 
-    });
+	});
 
-    // Admin users route
-    Route::prefix('admin/like-module')->middleware('admin.only')->group(function() {
+	// Admin users route
+	Route::prefix('admin/like-module')->middleware('admin.only')->group(function () {
 
-    });
+	});
 });
